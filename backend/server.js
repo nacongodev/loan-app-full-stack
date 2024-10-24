@@ -10,6 +10,7 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+app.use('/auth', authRoutes);
 // Loan Application Routes
 app.post('/loan/apply', (req, res) => {
     // Logic for submitting a loan application
@@ -25,6 +26,10 @@ app.post('/loan/approve/:id', (req, res) => {
 
 app.get('/', (req, res) => {
   res.send('Loan Management App');
+});
+
+mongoose.connect('mongodb://localhost:27017/loan_management', {
+    
 });
 
 app.listen(port, () => {
