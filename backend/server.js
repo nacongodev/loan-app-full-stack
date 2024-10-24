@@ -6,6 +6,7 @@ const authRoutes = require('./routes/authRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const accountRoutes = require('./routes/accountRoutes');
 const roleRoutes = require('./routes/roleRoutes');
+const tenantRoutes = require('./routes/tenantRoutes');
 const app = express();
 
 const env = process.env.NODE_ENV || 'development';
@@ -19,6 +20,8 @@ app.use('/account', accountRoutes);
 
 // Use the role routes
 app.use('/roles', roleRoutes);
+// Use the tenant routes
+app.use('/tenants', tenantRoutes);
 
 app.use('/auth', authRoutes);
 // Loan Application Routes
