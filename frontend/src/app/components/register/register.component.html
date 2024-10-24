@@ -1,0 +1,19 @@
+<div class="container mx-auto p-4">
+    <h2 class="text-2xl font-bold mb-4">Register</h2>
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <div class="mb-4">
+            <label for="username" class="block text-sm font-medium">Username</label>
+            <input type="text" id="username" name="username" ngModel required class="mt-1 block w-full">
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block text-sm font-medium">Email</label>
+            <input type="email" id="email" name="email" ngModel required class="mt-1 block w-full">
+        </div>
+        <div class="mb-4">
+            <label for="password" class="block text-sm font-medium">Password</label>
+            <input type="password" id="password" name="password" ngModel required class="mt-1 block w-full">
+        </div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Register</button>
+    </form>
+</div>
+
