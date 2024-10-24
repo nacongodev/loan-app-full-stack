@@ -5,7 +5,7 @@ const loanRoutes = require('./routes/loanRoutes');
 const authRoutes = require('./routes/authRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const accountRoutes = require('./routes/accountRoutes');
-
+const roleRoutes = require('./routes/roleRoutes');
 const app = express();
 
 const env = process.env.NODE_ENV || 'development';
@@ -16,6 +16,9 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 // Use the account routes
 app.use('/account', accountRoutes);
+
+// Use the role routes
+app.use('/roles', roleRoutes);
 
 app.use('/auth', authRoutes);
 // Loan Application Routes
