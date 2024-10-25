@@ -1,0 +1,20 @@
+<form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Loan Amount</mat-label>
+    <input matInput formControlName="amount" type="number">
+    <mat-error *ngIf="loanForm.get('amount').hasError('required')">Amount is required</mat-error>
+    <mat-error *ngIf="loanForm.get('amount').hasError('min')">Minimum amount is 1000</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Loan Term</mat-label>
+    <input matInput formControlName="term">
+    <mat-error *ngIf="loanForm.get('term').hasError('required')">Term is required</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Purpose</mat-label>
+    <input matInput formControlName="purpose">
+    <mat-error *ngIf="loanForm.get('purpose').hasError('required')">Purpose is required</mat-error>
+  </mat-form-field>
+  <button mat-raised-button type="submit" [disabled]="!loanForm.valid">Submit</button>
+</form>
+
